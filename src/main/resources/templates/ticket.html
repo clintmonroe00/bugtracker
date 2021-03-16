@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Create a New Ticket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap CSS file -->
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
+<body>
+    <h2>Please Describe the Issue:</h2>
+
+    <!-- Form to capture details for new ticket -->
+    <form action="#" th:action="@{/ticket}" th:object="${ticket}" method="post">
+        <p>Id: <input type="text" th:field="*{id}" /> </p>
+
+        <p>User Name:
+            <select th:field="*{userName}">
+                <!-- Formatting to remove 'default' option -->
+                <option th:value="0" text="Please Select"></option>
+
+                <option th:value="'cmonroe'">Clint Monroe</option>
+                <option th:value="'bsmith'">Bob Smith</option>
+                <option th:value="'rjames'">Rick James</option>
+            </select>
+        </p>
+
+        <p>Urgency:
+            <select th:field="*{urgency}" />
+                <!-- Formatting to remove 'default' option -->
+                <option th:value="0" text="Please Select"></option>
+
+                <option th:value="1">High Priority</option>
+                <option th:value="2">Medium Priority</option>
+                <option th:value="3">Low Priority</option>
+            </select>
+        </p>
+
+        <p>Module:
+            <select th:field="*{module}">
+                <!-- Formatting to remove 'default' option -->
+                <option th:value="0" text="Please Select"></option>
+
+                <option th:value="'accounting'">Accounting</option>
+                <option th:value="'crm'">CRM</option>
+                <option th:value="'inventory'">Inventory</option>
+                <option th:value="'orders'">Orders</option>
+                <option th:value="'setup'">Setup</option>
+            </select>
+        </p>
+
+        <p>Application: <input type="text" th:field="*{application}" /></p>
+
+        <p>Description: <textarea type="text" th:field="*{description}" rows="10" cols="40"/></p>
+
+        <!-- TODO: Generate creation date/time and add to form automatically for tracking. -->
+
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+
+</body>
+
+</html>

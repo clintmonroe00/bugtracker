@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <title>Create a New Ticket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <!-- Bootstrap CSS file -->
+    <link th:href = "@{/css/bootstrap.min.css}" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Result</h1>
+    <!-- <p th:text="'id: ' + ${ticket.id}" /> -->
+    <p th:text="'User Name: ' + ${ticket.userName}" />
+    <p th:text="'Urgency: ' + ${ticket.urgency}" />
+    <p th:text="'Module: ' + ${ticket.module}" />
+    <p th:text="'Application: ' + ${ticket.application}" />
+    <p th:text="'Description: ' + ${ticket.description}" />
+    <a href="/ticket">Submit another ticket</a>
+</body>
+
+</html>
